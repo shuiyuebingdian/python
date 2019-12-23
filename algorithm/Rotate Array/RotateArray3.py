@@ -18,11 +18,13 @@ def rotate(nums, k):
     :type k: int
     :rtype: None Do not return anything, modify nums in-place instead.
     """
-    k = k % len(nums)
-    reverse(nums, 0, k-1)
-    reverse(nums, k, len(nums) - 1)
+    nums_len = len(nums)
+    k = k % nums_len
+    # 翻转前半部分
+    reverse(nums, 0, nums_len - k - 1)
+    # 翻转后半部分
+    reverse(nums, nums_len - k, nums_len - 1)
     nums.reverse()
-    return nums
 
 
 print(rotate([1, 2, 3, 4, 5], 3))
