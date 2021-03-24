@@ -1,0 +1,11 @@
+2021-03-11 10:20:18,577 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth.bitnei.cn:443
+2021-03-11 10:20:18,913 - urllib3.connectionpool - DEBUG - https://oauth.bitnei.cn:443 "POST /acquire/token?username=test@bitnei.cn&password=abc12333 HTTP/1.1" 200 None
+2021-03-11 10:20:20,822 - youcku - ERROR - token«Î«Û ß∞‹
+2021-03-11 10:20:23,829 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth.bitnei.cn:443
+2021-03-11 10:20:24,166 - urllib3.connectionpool - DEBUG - https://oauth.bitnei.cn:443 "POST /acquire/token?username=test@bitnei.cn&password=abc12333 HTTP/1.1" 200 None
+2021-03-11 10:20:27,376 - youcku - ERROR - token«Î«Û ß∞‹
+2021-03-11 10:20:27,396 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth.bitnei.cn:443
+2021-03-11 10:20:27,835 - urllib3.connectionpool - DEBUG - https://oauth.bitnei.cn:443 "POST /acquire/token?username=test@bitnei.cn&password=abc12333 HTTP/1.1" 200 None
+2021-03-11 10:20:45,494 - youcku - ERROR - token«Î«Û ß∞‹
+2021-03-11 10:20:45,515 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth.bitnei.cn:443
+2021-03-11 10:20:45,833 - urllib3.connectionpool - DEBUG - https://oauth.bitnei.cn:443 "POST /acquire/token?username=test@bitnei.cn&password=abc12333 HTTP/1.1" 200 None

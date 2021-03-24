@@ -1,0 +1,3906 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>数据资产系统接口自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>数据资产系统接口自动化测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2021-03-09 17:29:04</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:43.427952</p>
+<p class='attribute'><strong>Status:</strong> Pass 49 Error 69</p>
+
+<p class='description'>环境：windows 7 浏览器：chrome</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_api.TestApi</td>
+    <td>118</td>
+    <td>49</td>
+    <td>0</td>
+    <td>69</td>
+    <td><a href="javascript:showClassDetail('c1',118)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_001</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_002</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_003</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_004</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        pass</a>
+
+    <div id='div_pt1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.4: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_005</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
+        pass</a>
+
+    <div id='div_pt1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.5: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_006</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.6')" >
+        pass</a>
+
+    <div id='div_pt1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.6: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_007</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.7')" >
+        pass</a>
+
+    <div id='div_pt1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.7: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_008</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.8')" >
+        pass</a>
+
+    <div id='div_pt1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.8: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_009</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.9')" >
+        pass</a>
+
+    <div id='div_pt1.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.9: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_010</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.10')" >
+        pass</a>
+
+    <div id='div_pt1.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.10: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_011</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.11')" >
+        pass</a>
+
+    <div id='div_pt1.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.11: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_012</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.12')" >
+        pass</a>
+
+    <div id='div_pt1.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.12: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_013</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.13')" >
+        pass</a>
+
+    <div id='div_pt1.13' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.13: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_014</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.14')" >
+        pass</a>
+
+    <div id='div_pt1.14' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.14: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_015</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.15')" >
+        pass</a>
+
+    <div id='div_pt1.15' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.15: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_016</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.16')" >
+        pass</a>
+
+    <div id='div_pt1.16' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.16').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.16: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_017</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.17')" >
+        pass</a>
+
+    <div id='div_pt1.17' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.17').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.17: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_018</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.18')" >
+        pass</a>
+
+    <div id='div_pt1.18' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.18').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.18: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.19' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_019</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.19')" >
+        pass</a>
+
+    <div id='div_pt1.19' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.19').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.19: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.20' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_020</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.20')" >
+        pass</a>
+
+    <div id='div_pt1.20' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.20').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.20: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.21' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_021</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.21')" >
+        pass</a>
+
+    <div id='div_pt1.21' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.21').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.21: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.22' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_022</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.22')" >
+        pass</a>
+
+    <div id='div_pt1.22' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.22').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.22: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.23' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_023</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.23')" >
+        pass</a>
+
+    <div id='div_pt1.23' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.23').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.23: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.24' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_024</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.24')" >
+        pass</a>
+
+    <div id='div_pt1.24' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.24').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.24: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.25' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_025</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.25')" >
+        pass</a>
+
+    <div id='div_pt1.25' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.25').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.25: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.26' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_026</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.26')" >
+        pass</a>
+
+    <div id='div_pt1.26' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.26').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.26: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.27' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_027</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.27')" >
+        pass</a>
+
+    <div id='div_pt1.27' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.27').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.27: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.28' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_028</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.28')" >
+        pass</a>
+
+    <div id='div_pt1.28' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.28').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.28: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.29' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_029</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.29')" >
+        pass</a>
+
+    <div id='div_pt1.29' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.29').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.29: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.30' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_030</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.30')" >
+        pass</a>
+
+    <div id='div_pt1.30' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.30').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.30: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.31' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_031</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.31')" >
+        pass</a>
+
+    <div id='div_pt1.31' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.31').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.31: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.32' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_032</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.32')" >
+        pass</a>
+
+    <div id='div_pt1.32' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.32').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.32: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.33' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_033</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.33')" >
+        pass</a>
+
+    <div id='div_pt1.33' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.33').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.33: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.34' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_034</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.34')" >
+        pass</a>
+
+    <div id='div_pt1.34' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.34').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.34: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.35' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_035</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.35')" >
+        pass</a>
+
+    <div id='div_pt1.35' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.35').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.35: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.36' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_036</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.36')" >
+        pass</a>
+
+    <div id='div_pt1.36' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.36').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.36: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.37' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_037</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.37')" >
+        pass</a>
+
+    <div id='div_pt1.37' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.37').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.37: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.38' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_038</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.38')" >
+        pass</a>
+
+    <div id='div_pt1.38' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.38').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.38: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.39' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_039</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.39')" >
+        pass</a>
+
+    <div id='div_pt1.39' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.39').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.39: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.40' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_040</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.40')" >
+        pass</a>
+
+    <div id='div_pt1.40' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.40').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.40: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.41' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_041</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.41')" >
+        pass</a>
+
+    <div id='div_pt1.41' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.41').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.41: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.42' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_042</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.42')" >
+        pass</a>
+
+    <div id='div_pt1.42' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.42').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.42: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.43' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_043</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.43')" >
+        pass</a>
+
+    <div id='div_pt1.43' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.43').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.43: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.44' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_044</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.44')" >
+        pass</a>
+
+    <div id='div_pt1.44' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.44').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.44: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.45' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_045</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.45')" >
+        pass</a>
+
+    <div id='div_pt1.45' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.45').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.45: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.46' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_046</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.46')" >
+        pass</a>
+
+    <div id='div_pt1.46' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.46').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.46: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.47' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_047</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.47')" >
+        pass</a>
+
+    <div id='div_pt1.47' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.47').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.47: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.48' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_048</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.48')" >
+        pass</a>
+
+    <div id='div_pt1.48' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.48').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.48: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.49' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_049</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.49')" >
+        pass</a>
+
+    <div id='div_pt1.49' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.49').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.49: 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.50' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_050</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.50')" >
+        error</a>
+
+    <div id='div_ft1.50' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.50').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.50: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.51' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_051</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.51')" >
+        error</a>
+
+    <div id='div_ft1.51' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.51').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.51: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.52' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_052</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.52')" >
+        error</a>
+
+    <div id='div_ft1.52' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.52').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.52: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.53' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_053</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.53')" >
+        error</a>
+
+    <div id='div_ft1.53' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.53').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.53: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.54' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_054</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.54')" >
+        error</a>
+
+    <div id='div_ft1.54' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.54').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.54: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.55' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_055</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.55')" >
+        error</a>
+
+    <div id='div_ft1.55' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.55').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.55: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.56' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_056</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.56')" >
+        error</a>
+
+    <div id='div_ft1.56' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.56').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.56: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.57' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_057</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.57')" >
+        error</a>
+
+    <div id='div_ft1.57' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.57').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.57: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.58' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_058</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.58')" >
+        error</a>
+
+    <div id='div_ft1.58' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.58').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.58: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.59' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_059</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.59')" >
+        error</a>
+
+    <div id='div_ft1.59' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.59').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.59: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.60' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_060</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.60')" >
+        error</a>
+
+    <div id='div_ft1.60' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.60').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.60: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.61' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_061</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.61')" >
+        error</a>
+
+    <div id='div_ft1.61' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.61').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.61: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.62' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_062</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.62')" >
+        error</a>
+
+    <div id='div_ft1.62' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.62').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.62: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.63' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_063</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.63')" >
+        error</a>
+
+    <div id='div_ft1.63' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.63').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.63: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.64' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_064</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.64')" >
+        error</a>
+
+    <div id='div_ft1.64' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.64').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.64: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.65' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_065</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.65')" >
+        error</a>
+
+    <div id='div_ft1.65' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.65').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.65: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.66' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_066</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.66')" >
+        error</a>
+
+    <div id='div_ft1.66' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.66').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.66: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.67' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_067</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.67')" >
+        error</a>
+
+    <div id='div_ft1.67' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.67').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.67: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.68' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_068</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.68')" >
+        error</a>
+
+    <div id='div_ft1.68' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.68').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.68: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.69' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_069</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.69')" >
+        error</a>
+
+    <div id='div_ft1.69' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.69').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.69: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.70' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_070</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.70')" >
+        error</a>
+
+    <div id='div_ft1.70' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.70').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.70: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.71' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_071</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.71')" >
+        error</a>
+
+    <div id='div_ft1.71' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.71').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.71: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.72' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_072</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.72')" >
+        error</a>
+
+    <div id='div_ft1.72' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.72').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.72: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.73' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_073</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.73')" >
+        error</a>
+
+    <div id='div_ft1.73' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.73').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.73: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.74' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_074</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.74')" >
+        error</a>
+
+    <div id='div_ft1.74' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.74').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.74: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.75' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_075</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.75')" >
+        error</a>
+
+    <div id='div_ft1.75' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.75').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.75: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.76' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_076</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.76')" >
+        error</a>
+
+    <div id='div_ft1.76' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.76').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.76: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.77' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_077</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.77')" >
+        error</a>
+
+    <div id='div_ft1.77' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.77').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.77: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.78' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_078</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.78')" >
+        error</a>
+
+    <div id='div_ft1.78' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.78').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.78: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.79' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_079</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.79')" >
+        error</a>
+
+    <div id='div_ft1.79' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.79').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.79: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.80' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_080</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.80')" >
+        error</a>
+
+    <div id='div_ft1.80' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.80').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.80: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.81' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_081</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.81')" >
+        error</a>
+
+    <div id='div_ft1.81' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.81').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.81: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.82' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_082</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.82')" >
+        error</a>
+
+    <div id='div_ft1.82' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.82').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.82: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.83' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_083</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.83')" >
+        error</a>
+
+    <div id='div_ft1.83' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.83').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.83: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.84' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_084</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.84')" >
+        error</a>
+
+    <div id='div_ft1.84' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.84').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.84: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.85' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_085</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.85')" >
+        error</a>
+
+    <div id='div_ft1.85' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.85').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.85: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.86' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_086</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.86')" >
+        error</a>
+
+    <div id='div_ft1.86' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.86').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.86: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.87' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_087</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.87')" >
+        error</a>
+
+    <div id='div_ft1.87' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.87').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.87: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.88' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_088</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.88')" >
+        error</a>
+
+    <div id='div_ft1.88' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.88').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.88: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.89' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_089</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.89')" >
+        error</a>
+
+    <div id='div_ft1.89' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.89').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.89: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.90' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_090</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.90')" >
+        error</a>
+
+    <div id='div_ft1.90' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.90').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.90: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.91' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_091</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.91')" >
+        error</a>
+
+    <div id='div_ft1.91' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.91').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.91: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.92' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_092</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.92')" >
+        error</a>
+
+    <div id='div_ft1.92' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.92').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.92: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.93' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_093</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.93')" >
+        error</a>
+
+    <div id='div_ft1.93' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.93').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.93: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.94' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_094</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.94')" >
+        error</a>
+
+    <div id='div_ft1.94' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.94').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.94: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.95' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_095</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.95')" >
+        error</a>
+
+    <div id='div_ft1.95' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.95').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.95: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.96' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_096</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.96')" >
+        error</a>
+
+    <div id='div_ft1.96' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.96').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.96: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.97' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_097</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.97')" >
+        error</a>
+
+    <div id='div_ft1.97' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.97').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.97: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.98' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_098</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.98')" >
+        error</a>
+
+    <div id='div_ft1.98' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.98').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.98: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.99' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_099</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.99')" >
+        error</a>
+
+    <div id='div_ft1.99' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.99').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.99: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.100' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_100</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.100')" >
+        error</a>
+
+    <div id='div_ft1.100' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.100').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.100: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.101' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_101</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.101')" >
+        error</a>
+
+    <div id='div_ft1.101' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.101').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.101: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.102' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_102</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.102')" >
+        error</a>
+
+    <div id='div_ft1.102' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.102').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.102: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.103' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_103</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.103')" >
+        error</a>
+
+    <div id='div_ft1.103' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.103').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.103: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.104' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_104</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.104')" >
+        error</a>
+
+    <div id='div_ft1.104' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.104').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.104: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.105' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_105</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.105')" >
+        error</a>
+
+    <div id='div_ft1.105' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.105').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.105: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.106' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_106</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.106')" >
+        error</a>
+
+    <div id='div_ft1.106' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.106').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.106: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.107' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_107</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.107')" >
+        error</a>
+
+    <div id='div_ft1.107' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.107').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.107: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.108' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_108</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.108')" >
+        error</a>
+
+    <div id='div_ft1.108' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.108').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.108: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.109' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_109</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.109')" >
+        error</a>
+
+    <div id='div_ft1.109' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.109').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.109: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.110' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_110</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.110')" >
+        error</a>
+
+    <div id='div_ft1.110' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.110').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.110: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.111' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_111</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.111')" >
+        error</a>
+
+    <div id='div_ft1.111' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.111').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.111: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.112' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_112</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.112')" >
+        error</a>
+
+    <div id='div_ft1.112' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.112').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.112: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.113' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_113</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.113')" >
+        error</a>
+
+    <div id='div_ft1.113' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.113').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.113: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.114' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_114</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.114')" >
+        error</a>
+
+    <div id='div_ft1.114' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.114').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.114: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.115' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_115</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.115')" >
+        error</a>
+
+    <div id='div_ft1.115' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.115').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.115: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.116' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_116</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.116')" >
+        error</a>
+
+    <div id='div_ft1.116' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.116').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.116: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.117' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_117</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.117')" >
+        error</a>
+
+    <div id='div_ft1.117' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.117').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.117: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.118' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_118</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.118')" >
+        error</a>
+
+    <div id='div_ft1.118' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.118').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.118: Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+Traceback (most recent call last):
+  File "D:\program\python3.8\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\pythonworkspace\PycharmProjects\dds\youchekuApiAutoTest\src\test_case\test_api.py", line 80, in test_api
+    row_num = int(data[CASE_ID].split("_")[1])
+KeyError: 'ID'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>118</td>
+    <td>49</td>
+    <td>0</td>
+    <td>69</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
